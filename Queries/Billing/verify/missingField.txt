@@ -1,0 +1,3 @@
+db.billing.insertOne({
+  patientName: "ErrorPatient3"
+});

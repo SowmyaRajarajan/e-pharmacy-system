@@ -1,0 +1,5 @@
+db.patients.insertOne({
+  name: "Sowmya",
+  isRegular: true,
+  discount: NumberDecimal("10.0")
+});

@@ -1,0 +1,7 @@
+db.inventory.insertOne({
+  name: "WrongType",
+  price: "twenty",
+  stock: NumberInt(10),
+  expiryDate: ISODate("2027-01-01"),
+  importBatch: "BATCH008"
+});

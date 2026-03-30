@@ -1,0 +1,21 @@
+db.createCollection("patients", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["name", "isRegular", "discount"],
+      properties: {
+        name: {
+          bsonType: "string"
+        },
+        isRegular: {
+          bsonType: "bool"
+        },
+        discount: {
+          bsonType: "decimal",
+          minimum: 0,
+          maximum: 100
+        }
+      }
+    }
+  }
+});

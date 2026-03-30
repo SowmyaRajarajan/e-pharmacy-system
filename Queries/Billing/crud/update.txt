@@ -1,0 +1,8 @@
+db.billing.updateOne(
+  { patientName: "Arun" },
+  {
+    $set: {
+      finalAmount: NumberDecimal("85.0")
+    }
+  }
+);

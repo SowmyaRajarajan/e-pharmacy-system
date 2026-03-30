@@ -1,0 +1,4 @@
+db.patients.insertOne({
+  name: "InvalidPatient3",
+  isRegular: true
+});

@@ -1,0 +1,32 @@
+function generateBill(patientName, items) {
+  const patient = db.patients.findOne({ name: patientName });
+
+  let total = 0;
+
+  items.forEach(item => {
+    const med = db.inventory.findOne({ name: item.medicine });
+    total += parseFloat(med.price) * item.quantity;
+  });
+
+  let finalAmount = total;
+
+  if (patient.isRegular) {
+    finalAmount = total * 0.9; // 10% discount
+  }
+
+  const bill = {
+    patientName: patientName,
+    items: items,
+    totalAmount: NumberDecimal(total.toString()),
+    finalAmount: NumberDecimal(finalAmount.toString()),
+    date: new Date()
+  };
+
+  db.billing.insertOne(bill);
+
+  return bill;
+}
+generateBill("Arun", [
+  { medicine: "Paracetamol", quantity: 2 },
+  { medicine: "Aspirin", quantity: 3 }
+]);

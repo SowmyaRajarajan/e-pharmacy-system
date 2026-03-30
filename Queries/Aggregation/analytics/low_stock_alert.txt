@@ -1,0 +1,5 @@
+db.inventory.aggregate([
+  {
+    $match: { stock: { $lte: 50 } }
+  }
+]);

@@ -1,0 +1,65 @@
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+const tomorrow = new Date(today);
+tomorrow.setDate(today.getDate() + 1);
+
+db.sales.aggregate([
+  {
+    $match: {
+      date: {
+        $gte: today,
+        $lt: tomorrow
+      }
+    }
+  },
+  {
+    $lookup: {
+      from: "inventory",
+      localField: "medicine",
+      foreignField: "name",
+      as: "inventoryData"
+    }
+  },
+  {
+    $unwind: "$inventoryData"
+  },
+  {
+    $group: {
+      _id: "$medicine",
+      unitsSold: { $sum: "$quantity" },
+      pricePerUnit: { $first: "$inventoryData.price" },
+      total: { $sum: "$totalPrice" }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      medicine: "$_id",
+      unitsSold: 1,
+      pricePerUnit: 1,
+      total: 1
+    }
+  },
+  {
+    $facet: {
+      itemized: [
+        { $sort: { medicine: 1 } }
+      ],
+      grandTotal: [
+        {
+          $group: {
+            _id: null,
+            totalRevenue: { $sum: "$total" }
+          }
+        },
+        {
+          $project: {
+            _id: 0,
+            totalRevenue: 1
+          }
+        }
+      ]
+    }
+  }
+]);

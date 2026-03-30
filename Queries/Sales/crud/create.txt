@@ -1,0 +1,6 @@
+db.sales.insertOne({
+  medicine: "Paracetamol",
+  quantity: NumberInt(10),
+  totalPrice: NumberDecimal("220.0"),
+  date: ISODate()
+});

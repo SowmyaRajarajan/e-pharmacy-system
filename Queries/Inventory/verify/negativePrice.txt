@@ -1,0 +1,7 @@
+db.inventory.insertOne({
+  name: "InvalidMed",
+  price: NumberDecimal("-10.0"),
+  stock: NumberInt(10),
+  expiryDate: ISODate("2027-01-01"),
+  importBatch: "BATCH007"
+});

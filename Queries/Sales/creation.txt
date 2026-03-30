@@ -1,0 +1,24 @@
+db.createCollection("sales", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["medicine", "quantity", "totalPrice", "date"],
+      properties: {
+        medicine: {
+          bsonType: "string"
+        },
+        quantity: {
+          bsonType: "int",
+          minimum: 1
+        },
+        totalPrice: {
+          bsonType: "decimal",
+          minimum: 0
+        },
+        date: {
+          bsonType: "date"
+        }
+      }
+    }
+  }
+});

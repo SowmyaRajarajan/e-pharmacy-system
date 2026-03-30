@@ -1,0 +1,18 @@
+db.inventory.aggregate([
+  {
+    $lookup: {
+      from: "sales",
+      localField: "name",
+      foreignField: "medicine",
+      as: "salesData"
+    }
+  },
+  {
+    $addFields: {
+      totalSold: { $sum: "$salesData.quantity" }
+    }
+  },
+  {
+    $sort: { totalSold: -1 }
+  }
+]);

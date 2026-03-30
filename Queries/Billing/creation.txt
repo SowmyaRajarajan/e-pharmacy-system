@@ -1,0 +1,35 @@
+db.createCollection("billing", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["patientName", "items", "totalAmount", "finalAmount", "date"],
+      properties: {
+        patientName: {
+          bsonType: "string"
+        },
+        items: {
+          bsonType: "array",
+          items: {
+            bsonType: "object",
+            required: ["medicine", "quantity"],
+            properties: {
+              medicine: { bsonType: "string" },
+              quantity: { bsonType: "int", minimum: 1 }
+            }
+          }
+        },
+        totalAmount: {
+          bsonType: "decimal",
+          minimum: 0
+        },
+        finalAmount: {
+          bsonType: "decimal",
+          minimum: 0
+        },
+        date: {
+          bsonType: "date"
+        }
+      }
+    }
+  }
+});

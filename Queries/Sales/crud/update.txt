@@ -1,0 +1,7 @@
+db.sales.updateOne(
+  { medicine: "Aspirin" },
+  {
+    $inc: { quantity: NumberInt(2) },
+    $set: { totalPrice: NumberDecimal("120.0") }
+  }
+);

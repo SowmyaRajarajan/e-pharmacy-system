@@ -1,0 +1,7 @@
+db.billing.insertOne({
+  patientName: "ErrorPatient2",
+  items: "invalid",
+  totalAmount: NumberDecimal("50.0"),
+  finalAmount: NumberDecimal("45.0"),
+  date: ISODate()
+});

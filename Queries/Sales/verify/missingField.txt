@@ -1,0 +1,4 @@
+db.sales.insertOne({
+  medicine: "ErrorMed3",
+  quantity: NumberInt(2)
+});

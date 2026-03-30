@@ -1,0 +1,27 @@
+db.patients.insertMany([
+  {
+    name: "Arun",
+    isRegular: true,
+    discount: NumberDecimal("10.0")
+  },
+  {
+    name: "Meena",
+    isRegular: false,
+    discount: NumberDecimal("0.0")
+  },
+  {
+    name: "Ravi",
+    isRegular: true,
+    discount: NumberDecimal("10.0")
+  },
+  {
+    name: "Divya",
+    isRegular: false,
+    discount: NumberDecimal("0.0")
+  },
+  {
+    name: "Karthik",
+    isRegular: true,
+    discount: NumberDecimal("10.0")
+  }
+]);

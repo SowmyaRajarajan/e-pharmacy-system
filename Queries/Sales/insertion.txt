@@ -1,0 +1,32 @@
+db.sales.insertMany([
+  {
+    medicine: "Paracetamol",
+    quantity: NumberInt(5),
+    totalPrice: NumberDecimal("102.5"),
+    date: ISODate()
+  },
+  {
+    medicine: "Amoxicillin",
+    quantity: NumberInt(2),
+    totalPrice: NumberDecimal("90.0"),
+    date: ISODate()
+  },
+  {
+    medicine: "Metformin",
+    quantity: NumberInt(3),
+    totalPrice: NumberDecimal("90.0"),
+    date: ISODate()
+  },
+  {
+    medicine: "Ibuprofen",
+    quantity: NumberInt(4),
+    totalPrice: NumberDecimal("100.0"),
+    date: ISODate()
+  },
+  {
+    medicine: "Aspirin",
+    quantity: NumberInt(6),
+    totalPrice: NumberDecimal("90.0"),
+    date: ISODate()
+  }
+]);

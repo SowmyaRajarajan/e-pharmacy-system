@@ -1,0 +1,37 @@
+db.inventory.insertMany([
+  {
+    name: "Paracetamol",
+    price: NumberDecimal("20.5"),
+    stock: NumberInt(100),
+    expiryDate: ISODate("2027-01-01"),
+    importBatch: "BATCH001"
+  },
+  {
+    name: "Amoxicillin",
+    price: NumberDecimal("45.0"),
+    stock: NumberInt(50),
+    expiryDate: ISODate("2026-06-01"),
+    importBatch: "BATCH002"
+  },
+  {
+    name: "Metformin",
+    price: NumberDecimal("30.0"),
+    stock: NumberInt(75),
+    expiryDate: ISODate("2026-12-01"),
+    importBatch: "BATCH003"
+  },
+  {
+    name: "Ibuprofen",
+    price: NumberDecimal("25.0"),
+    stock: NumberInt(60),
+    expiryDate: ISODate("2027-03-01"),
+    importBatch: "BATCH004"
+  },
+  {
+    name: "Aspirin",
+    price: NumberDecimal("15.0"),
+    stock: NumberInt(120),
+    expiryDate: ISODate("2026-09-01"),
+    importBatch: "BATCH005"
+  }
+]);

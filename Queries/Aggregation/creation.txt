@@ -1,0 +1,14 @@
+db.createView(
+  "sales_summary",
+  "inventory",
+  [
+    {
+      $lookup: {
+        from: "sales",
+        localField: "name",
+        foreignField: "medicine",
+        as: "salesData"
+      }
+    }
+  ]
+);

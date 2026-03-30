@@ -1,0 +1,7 @@
+db.inventory.insertOne({
+  name: "Cetirizine",
+  price: NumberDecimal("18.0"),
+  stock: NumberInt(80),
+  expiryDate: ISODate("2027-05-01"),
+  importBatch: "BATCH006"
+});

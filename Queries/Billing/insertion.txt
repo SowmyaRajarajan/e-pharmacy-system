@@ -1,0 +1,10 @@
+db.billing.insertOne({
+  patientName: "Arun",
+  items: [
+    { medicine: "Paracetamol", quantity: NumberInt(2) },
+    { medicine: "Aspirin", quantity: NumberInt(3) }
+  ],
+  totalAmount: NumberDecimal("100.0"),
+  finalAmount: NumberDecimal("90.0"),
+  date: ISODate()
+});

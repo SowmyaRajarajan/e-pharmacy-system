@@ -1,0 +1,7 @@
+db.inventory.updateOne(
+  { name: "Paracetamol" },
+  {
+    $set: { price: NumberDecimal("22.0") },
+    $inc: { stock: NumberInt(50) }
+  }
+);

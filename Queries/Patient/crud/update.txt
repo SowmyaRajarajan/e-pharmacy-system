@@ -1,0 +1,9 @@
+db.patients.updateOne(
+  { name: "Meena" },
+  {
+    $set: {
+      isRegular: true,
+      discount: NumberDecimal("10.0")
+    }
+  }
+);
